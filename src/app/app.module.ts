@@ -7,6 +7,7 @@ import { NavBarComponent } from './components/nav-bar/nav-bar.component';
 import { PagesProjetoComponent } from './pages/pages-projeto/pages-projeto.component';
 import { PagesSobreComponent } from './pages/pages-sobre/pages-sobre.component';
 import { PagesAdicionarProjetoComponent } from './pages/pages-adicionar-projeto/pages-adicionar-projeto.component';
+import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 
 @NgModule({
   declarations: [
@@ -14,7 +15,8 @@ import { PagesAdicionarProjetoComponent } from './pages/pages-adicionar-projeto/
     NavBarComponent,
     PagesProjetoComponent,
     PagesSobreComponent,
-    PagesAdicionarProjetoComponent
+    PagesAdicionarProjetoComponent,
+    CardsProjetosComponent
   ],
   imports: [
     BrowserModule,
