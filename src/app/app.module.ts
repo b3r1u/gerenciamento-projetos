@@ -1,6 +1,12 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { MatIconModule } from '@angular/material/icon';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatFormFieldModule } from '@angular/material/form-field'
+import { MatDialogModule } from '@angular/material/dialog'
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -11,8 +17,6 @@ import { PagesAdicionarProjetoComponent } from './pages/pages-adicionar-projeto/
 import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddProjetosComponent } from './components/add-projetos/add-projetos.component';
-import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -22,7 +26,7 @@ import { FormsModule } from '@angular/forms';
     PagesSobreComponent,
     PagesAdicionarProjetoComponent,
     CardsProjetosComponent,
-    AddProjetosComponent
+    AddProjetosComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,9 +34,12 @@ import { FormsModule } from '@angular/forms';
     BrowserAnimationsModule,
     MatIconModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatDialogModule,
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
