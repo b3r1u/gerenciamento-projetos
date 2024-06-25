@@ -1,9 +1,40 @@
 import { Injectable } from '@angular/core';
+import { Projeto } from '../interface/projeto';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class LocalStorageProjetosService {
+  private localStorageKey = 'projects';
 
-  constructor() { }
+  constructor() {}
+
+  // Get all projects
+  getProjects(): Projeto[] {
+    const projects = localStorage.getItem(this.localStorageKey);
+    return projects ? JSON.parse(projects) : [];
+  }
+
+  // Add a new project
+  addProject(project: Projeto): void {
+    const projects = this.getProjects();
+    project.id = new Date().getTime();
+    projects.push(project);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
+  }
+
+  // Remove a project by ID
+  removeProject(id: number): void {
+    let projects = this.getProjects();
+    projects = projects.filter((project) => project.id !== id);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
+  }
+
+  // Update a project by ID
+  updateProject(updatedProject: Projeto): void {
+    let projects = this.getProjects();
+    projects = projects.map(project => project.id === updatedProject.id ? updatedProject : project);
+    localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
+  }
 }
+
