@@ -1,17 +1,18 @@
 <div class="content">
     <h2>Seus projetos</h2>
-    <div class="project">
+
+    <div class="project" *ngFor="let projeto of projetos">
         <div class="letter">
-            <h1>T</h1>
+            <h1>{{ projeto.name.charAt(0).toUpperCase() }}</h1>
         </div>
         <div class="informs">
-            <h1>Teste</h1>
+            <h1>{{ projeto.name }}</h1>
             <button> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="groups"></mat-icon> Membros</button>
             <button> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete_outlined"></mat-icon> Apagar projeto</button>
             <button> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info_outlined"></mat-icon> Informações</button>
         </div>
         <div class="cards">
-            <h3>Teste</h3>
+            <h3>{{ projeto.name }}</h3>
         </div>
     </div>
     
