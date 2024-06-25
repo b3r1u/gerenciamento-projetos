@@ -1,0 +1,43 @@
+<div class="cad-projeto">
+  <form (ngSubmit)="addProject()">
+    <label for="name">Nome do Projeto:</label>
+    <input type="text" id="name" [(ngModel)]="name" name="name" required />
+
+    <label for="startDate">Data incio:</label>
+    <input
+      type="date"
+      id="startDate"
+      [(ngModel)]="startDate"
+      name="startDate"
+      required
+    />
+
+    <label for="endDate">Data final:</label>
+    <input
+      type="date"
+      id="endDate"
+      [(ngModel)]="endDate"
+      name="endDate"
+      required
+    />
+
+    <label for="members">Membros</label>
+    <input
+      type="text"
+      id="members"
+      [(ngModel)]="members"
+      name="members"
+      required
+    />
+
+    <label for="description">Descrição:</label>
+    <textarea
+      id="description"
+      [(ngModel)]="description"
+      name="description"
+      required
+    ></textarea>
+
+    <button type="submit">Adicionar Project</button>
+  </form>
+</div>

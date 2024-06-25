@@ -10,6 +10,9 @@ import { PagesSobreComponent } from './pages/pages-sobre/pages-sobre.component';
 import { PagesAdicionarProjetoComponent } from './pages/pages-adicionar-projeto/pages-adicionar-projeto.component';
 import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AddProjetosComponent } from './components/add-projetos/add-projetos.component';
+import { CommonModule } from '@angular/common';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -18,13 +21,16 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
     PagesProjetoComponent,
     PagesSobreComponent,
     PagesAdicionarProjetoComponent,
-    CardsProjetosComponent
+    CardsProjetosComponent,
+    AddProjetosComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    MatIconModule
+    MatIconModule,
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

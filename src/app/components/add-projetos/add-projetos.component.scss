@@ -1,0 +1,17 @@
+.cad-projeto {
+    width: 20em;
+}
+
+.cad-projeto form{
+    display: flex;
+    flex-direction: column;
+}
+
+.card-projeto form label {
+    margin-bottom: 5px;
+}
+
+.cad-projeto form input,
+.cad-projeto form textarea {
+  margin-bottom: 10px;
+}
