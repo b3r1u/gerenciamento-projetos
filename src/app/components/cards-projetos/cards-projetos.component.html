@@ -11,7 +11,7 @@
             <button (click)="removeProjeto(projeto.id)" > <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="delete_outlined"></mat-icon> Apagar projeto</button>
             <button> <mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="info_outlined"></mat-icon> Informações</button>
         </div>
-        <div class="cards">
+        <div class="cards" [routerLink]="['/projeto', projeto.id]">
             <h3>{{ projeto.name }}</h3>
         </div>
     </div>

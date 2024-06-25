@@ -17,6 +17,7 @@ import { PagesAdicionarProjetoComponent } from './pages/pages-adicionar-projeto/
 import { CardsProjetosComponent } from './components/cards-projetos/cards-projetos.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AddProjetosComponent } from './components/add-projetos/add-projetos.component';
+import { PagesInfoProjetoComponent } from './pages/pages-info-projeto/pages-info-projeto.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +28,7 @@ import { AddProjetosComponent } from './components/add-projetos/add-projetos.com
     PagesAdicionarProjetoComponent,
     CardsProjetosComponent,
     AddProjetosComponent,
+    PagesInfoProjetoComponent,
   ],
   imports: [
     BrowserModule,

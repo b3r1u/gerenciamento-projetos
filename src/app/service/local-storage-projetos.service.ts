@@ -15,6 +15,12 @@ export class LocalStorageProjetosService {
     return projects ? JSON.parse(projects) : [];
   }
 
+  //Buscado Projeto por Id
+  getProjectById(id: number): Projeto | undefined {
+    const projetos = this.getProjects();
+    return projetos.find((projeto) => projeto.id === id);
+  }
+
   // Add a new project
   addProject(project: Projeto): void {
     const projects = this.getProjects();
@@ -33,7 +39,9 @@ export class LocalStorageProjetosService {
   // Update a project by ID
   updateProject(updatedProject: Projeto): void {
     let projects = this.getProjects();
-    projects = projects.map(project => project.id === updatedProject.id ? updatedProject : project);
+    projects = projects.map((project) =>
+      project.id === updatedProject.id ? updatedProject : project
+    );
     localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
   }
 }

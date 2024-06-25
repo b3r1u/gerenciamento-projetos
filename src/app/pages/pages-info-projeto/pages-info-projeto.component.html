@@ -1,0 +1,8 @@
+<div *ngIf="projeto">
+  <h1>{{ projeto.name }}</h1>
+  <p>Data de início: {{ projeto.startDate }}</p>
+  <p>Data de entrega: {{ projeto.endDate }}</p>
+  <p>Membros: {{ projeto.members.join(', ') }}</p>
+  <p>Descrição: {{ projeto.description }}</p>
+  <!-- Aqui você pode adicionar campos para adicionar atividades, etc. -->
+</div>
