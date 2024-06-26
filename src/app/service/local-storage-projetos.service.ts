@@ -15,6 +15,14 @@ export class LocalStorageProjetosService {
     return projects ? JSON.parse(projects) : [];
   }
 
+  private parseProjects(projects: Projeto[]): Projeto[] {
+    return projects.map((proj) => ({
+      ...proj,
+      startDate: new Date(proj.startDate),
+      endDate: new Date(proj.endDate),
+    }));
+  }
+
   //Buscado Projeto por Id
   getProjectById(id: number): Projeto | undefined {
     const projetos = this.getProjects();
