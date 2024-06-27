@@ -4,6 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { CommonModule } from '@angular/common';
 
 import { Projeto } from 'src/app/interface/projeto';
+import { Atividade } from 'src/app/interface/atividade';
 import { LocalStorageProjetosService } from 'src/app/service/local-storage-projetos.service';
 
 @Component({
@@ -36,9 +37,9 @@ export class AddProjetosComponent {
       endDate: this.endDate,
       members: this.members.split(','),
       description: this.description,
+      atividades: [],
     };
     this.localStorageProjetoService.addProject(newProject);
-    // Clear the form (optional)
     this.name = '';
     this.startDate = new Date();
     this.endDate = new Date();

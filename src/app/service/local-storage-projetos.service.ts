@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Projeto } from '../interface/projeto';
+import { Atividade } from '../interface/atividade';
 
 @Injectable({
   providedIn: 'root',
@@ -33,6 +34,7 @@ export class LocalStorageProjetosService {
   addProject(project: Projeto): void {
     const projects = this.getProjects();
     project.id = new Date().getTime();
+    project.atividades = [];
     projects.push(project);
     localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
   }
@@ -51,6 +53,21 @@ export class LocalStorageProjetosService {
       project.id === updatedProject.id ? updatedProject : project
     );
     localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
+  }
+
+  addAtividade(projetoId: number, atividade: Atividade): void {
+    const projects = this.getProjects();
+    const projetoIndex = projects.findIndex(
+      (projeto) => projeto.id === projetoId
+    );
+    if (projetoIndex !== -1) {
+      if (!projects[projetoIndex].atividades) {
+        projects[projetoIndex].atividades = []; 
+      }
+      atividade.id = new Date().getTime();
+      projects[projetoIndex].atividades.push(atividade);
+      localStorage.setItem(this.localStorageKey, JSON.stringify(projects));
+    }
   }
 }
 

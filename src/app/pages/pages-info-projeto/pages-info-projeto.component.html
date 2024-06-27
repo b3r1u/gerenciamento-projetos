@@ -25,10 +25,14 @@
     <p>{{ projeto?.description }}</p>
   </div>
   <div class="date">
-    <br>
+    <br />
     <h3>Datas do projeto</h3>
-    <p><b>Iniciado em: {{ projeto?.startDate }}</b></p>
-    <p><b>Entrega em: {{ projeto?.endDate }}</b></p>
+    <p>
+      <b>Iniciado em: {{ projeto?.startDate }}</b>
+    </p>
+    <p>
+      <b>Entrega em: {{ projeto?.endDate }}</b>
+    </p>
   </div>
 </div>
 
@@ -38,3 +42,26 @@
     <div class="member">{{ capitalizeFirstLetter(membro.trim()) }}</div>
   </div>
 </div>
+
+<h3>Adicionar Nova Atividade</h3>
+<div>
+  <input
+    type="text"
+    [(ngModel)]="novaAtividade.nome"
+    placeholder="Nome da Atividade"
+  />
+  <textarea
+    [(ngModel)]="novaAtividade.descricao"
+    placeholder="Descrição da Atividade"
+  ></textarea>
+  <button (click)="adicionarAtividade()">Adicionar Atividade</button>
+</div>
+
+<h2>Atividades</h2>
+<ng-container *ngIf="projeto && projeto.atividades && projeto.atividades.length > 0">
+  <div *ngFor="let atividade of projeto.atividades">
+    <p>
+      <strong>{{ atividade.nome }}</strong>: {{ atividade.descricao }}
+    </p>
+  </div>
+</ng-container>
