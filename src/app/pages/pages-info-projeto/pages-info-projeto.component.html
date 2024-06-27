@@ -1,3 +1,40 @@
 <div class="info" *ngIf="projeto">
   <h1>{{ projeto.name }}</h1>
+  <button (click)="mostraMembros()">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="groups"
+    ></mat-icon>
+    <b>Membros ( {{ projeto.members.length }} )</b>
+  </button>
+  <button (click)="mostrarInfo()">
+    <mat-icon
+      aria-hidden="false"
+      aria-label="Example home icon"
+      fontIcon="info_outlined"
+    ></mat-icon>
+    Informações
+  </button>
+</div>
+
+<div class="info-projeto" *ngIf="mostraInfo">
+  <h1>Informações</h1>
+  <br />
+  <div class="project-description">
+    <p>{{ projeto?.description }}</p>
+  </div>
+  <div class="date">
+    <br>
+    <h3>Datas do projeto</h3>
+    <p><b>Iniciado em: {{ projeto?.startDate }}</b></p>
+    <p><b>Entrega em: {{ projeto?.endDate }}</b></p>
+  </div>
+</div>
+
+<div class="showMember" *ngIf="mostrarMembros">
+  <h1>Membros</h1>
+  <div *ngFor="let membro of projeto?.members">
+    <div class="member">{{ capitalizeFirstLetter(membro.trim()) }}</div>
+  </div>
 </div>
