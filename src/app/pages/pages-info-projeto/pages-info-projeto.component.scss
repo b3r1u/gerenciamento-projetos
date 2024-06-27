@@ -5,6 +5,7 @@
   flex-direction: row;
   align-items: center;
   gap: 1em;
+  border-bottom: 2px solid #ccc;
 }
 
 .info h1 {
@@ -75,4 +76,27 @@
     white-space: normal;
     border-bottom: 2px solid #ccc;
   }
+}
+
+.add-atividades {
+  display: flex;
+  flex-direction: column;
+  gap: 1em;
+  width: 20em;
+  margin-top: 3em;
+  margin-left: 2em;
+}
+
+.add-atividades h3 {
+  text-align: center;
+  font-weight: bold;
+}
+
+.atividades {
+  margin-top: 2em;
+  margin-left: 2em;
+}
+
+.atividades-container {
+  width: 20em;
 }
